@@ -42,12 +42,12 @@ describe('02 - About', () => {
   it('Página contém dois parágrafos com texto sobre a Pokédex.',
     () => {
       const { history } = renderWithRouter(<App />);
-      const pokedexSRC = 'https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png';
+      // img.src ref https://stackoverflow.com/questions/60509527/jestreact-native-testing-library-how-to-test-an-image-src
+      const src = 'https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png';
 
       history.push('/about');
 
       const img = screen.getByRole('img', { name: /pokédex/i });
-      // img.src ref https://stackoverflow.com/questions/60509527/jestreact-native-testing-library-how-to-test-an-image-src
-      expect(img.src).toContain(pokedexSRC);
+      expect(img.src).toContain(src);
     });
 });
