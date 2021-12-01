@@ -2,7 +2,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import renderWithRouter from '../helpers/renderWithRouter';
 import { FavoritePokemons } from '../components';
-import PikachuObj from '../helpers/PikachuObj';
+import PokemonObj from '../helpers/PokemonObj';
 
 describe('03 - <FavoritePokemons.js />', () => {
   it('É exibido a mensagem se a pessoa não tiver pokémons favoritos.', () => {
@@ -14,7 +14,7 @@ describe('03 - <FavoritePokemons.js />', () => {
   });
 
   it('É exibido todos os cards de pokémons favoritados.', () => {
-    renderWithRouter(<FavoritePokemons pokemons={ [PikachuObj] } />);
+    renderWithRouter(<FavoritePokemons pokemons={ [PokemonObj[0]] } />);
 
     const pikachu = screen.getByText(/pikachu/i);
 
