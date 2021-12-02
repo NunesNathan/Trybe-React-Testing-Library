@@ -4,17 +4,17 @@ import renderWithRouter from '../helpers/renderWithRouter';
 import { NotFound } from '../components';
 
 describe('04 - <NotFound.js />', () => {
-  it('Página é renderizada.', () => {
+  beforeEach(() => {
     renderWithRouter(<NotFound />);
+  });
 
+  it('Página é renderizada.', () => {
     const h2 = screen.getByRole('heading', { name: /page requested/i, level: 2 });
 
     expect(h2).toBeDefined();
   });
 
   it('Página contém gif.', () => {
-    renderWithRouter(<NotFound />);
-
     const src = 'https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif';
 
     const img = screen.getByRole('img', { name: /Pikachu crying/i });
