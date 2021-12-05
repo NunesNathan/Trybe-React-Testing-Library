@@ -33,7 +33,8 @@ describe('06 - <Pokemon.js />', () => {
     expect(summary).toBeInTheDocument();
 
     const paragraph = screen.getByText(
-      /flame on its tail/i );
+      /flame on its tail/i,
+    );
     expect(paragraph).toBeInTheDocument();
   });
 
